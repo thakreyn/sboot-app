@@ -27,10 +27,9 @@ jobs:
 
     strategy:
       matrix:
-        browser: [chrome, firefox]
-        device: [desktop, mobile]
+        OS: [ubuntu-22.04, ubuntu-20.04]
 
-    runs-on: ubuntu-22.04
+    runs-on: ${{ matrix.OS }}
 
     timeout-minutes: 10
 
@@ -43,8 +42,9 @@ jobs:
 
       - name: Demo of how to access current matrix context
         run: |
-          echo "Browser:" ${{ matrix.browser }}
-          echo "Device: ${{ matrix.device }}"
+            echo "Works"
+#          echo "Browser:" ${{ matrix.browser }}
+#          echo "Device: ${{ matrix.device }}"
 
       - name: Step inside test job
         run: echo "Hello $NAME"
