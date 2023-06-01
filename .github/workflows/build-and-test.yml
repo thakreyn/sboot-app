@@ -23,6 +23,19 @@ jobs:
       - name: Another step
         run: echo "This is another step in the same job"
 
+
+  custom-test:
+
+    runs-on: ubuntu-20.04
+
+    timeout-minutes: 2
+
+    needs: [build, test]
+
+    steps:
+      - name: Mention that custom test is working
+        run: echo "If this is working then build and test are working"
+
   test:
 
     runs-on: ubuntu-22.04
