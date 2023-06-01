@@ -49,7 +49,6 @@ jobs:
       NAME: Planet
 
     steps:
-      -
       - name: Demo of how to access current matrix context
         run: |
           echo "Browser: ${{ matrix.browser }}"
